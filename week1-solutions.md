@@ -6,10 +6,14 @@
 
    Unlike Groth16, the trusted setup for PLONK is not circuit specific. This means a generic and universal trusted  setup is sufficient for PLONK.
 
-   According to the Iden3 documentation(1), “Groth16 requires a trusted ceremony for each circuit. PLONK does not require it, it's enough with the powers of tau ceremony which is universal.”
+   According to the Iden3 documentation(1), 
+   
+   >Groth16 requires a trusted ceremony for each circuit. PLONK does not require it, it's enough with the powers of tau ceremony which is universal.
     **(1)Source:** https://github.com/iden3/snarkjs#15-setup
 
-2. According to Consenys(2), the keys are “used to create the proofs required for private transactions and the verification of those proofs”
+2. According to Consenys(2), the keys are:
+
+>... used to create the proofs required for private transactions and the verification of those proofs
     **(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
 
 
@@ -27,7 +31,8 @@
 
 It multiplies 2 private inputs (a  and b) to produce an output called c. The constraints describe how to produce the output where c <== a * b; is a “compound” statement that is an assignment `(c <-- a * b)`  and an equality constraint `(c === a * b)`.
 
-According to the iden docs(3), “we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.”
+According to the iden docs(3), 
+> we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.
     **(3)Source:** https://blog.iden3.io/first-zk-proof.html
 
 ## 2.2.2 What is a Powers of Tau ceremony? Explain why this is important in the setup of zk-SNARK applications.
@@ -37,9 +42,9 @@ The goal of the Powers of Tau ceremony is to securely generate a Common Referenc
 
 According to ebfull(4) the Powers of Tau ceremony is a: 
 
->"multi-party computation (MPC) ceremony which constructs partial zk-SNARK parameters for all circuits... It works by taking a step that is performed by all zk-SNARK MPCs and performing it in just one single ceremony. This makes individual zk-SNARK MPCs much cheaper and allows them to scale to practically unbounded numbers of participants" 
+>multi-party computation (MPC) ceremony which constructs partial zk-SNARK parameters for all circuits... It works by taking a step that is performed by all zk-SNARK MPCs and performing it in just one single ceremony. This makes individual zk-SNARK MPCs much cheaper and allows them to scale to practically unbounded numbers of participants
 
-   (4)**Source:**  https://github.com/ebfull/powersoftau
+   **(4)Source:**  https://github.com/ebfull/powersoftau
 
 ## 2.2.3 How are Phase 1 and Phase 2 trusted setup ceremonies different from each other?
 
@@ -49,19 +54,22 @@ According to zkproof.org(5):
 
 >The first phase referred to as "Powers of Tau", produces generic setup parameters that can be used for all circuits of the scheme, up to a given size. The second phase converts the output of the Powers of Tau phase into an NP-relation-specific CRS.  
 
-(5)**Source:** https://zkproof.org/2021/06/30/setup-ceremonies/
+**(5)Source:** https://zkproof.org/2021/06/30/setup-ceremonies/
 
- NP Relation means:
-According to Britanica(6), “A problem is called NP (nondeterministic polynomial) if its solution can be guessed and verified in polynomial time”  
+Additional info on NP Relation from Britanica(6): 
 
-(6)**Source:** https://www.britannica.com/science/NP-complete-problem
+>A problem is called NP (nondeterministic polynomial) if its solution can be guessed and verified in polynomial time
 
-According to a lecture by Luca Travison at Stanford(7), "a search problem defined by a relation R is a NP search problem if the relation is efficiently computable and such that solutions, if they exist, are short."   (7)**Source:** https://cs.stanford.edu/people/trevisan/cs254-12/lecture02.pdf
+**(6)Source:** https://www.britannica.com/science/NP-complete-problem
+
+According to a lecture by Luca Travison at Stanford(7), 
+> a search problem defined by a relation R is a NP search problem if the relation is efficiently computable and such that solutions, if they exist, are short."   
+**(7)Source:** https://cs.stanford.edu/people/trevisan/cs254-12/lecture02.pdf
  
 
 ## 2.3.1 Try to run compile-Multiplier3-Groth16.sh. You should encounter an error with the circuit as is. Explain what the error means and how it arises.
  
-This error arises because the constraint d <== a * b * c is not quadratic(8). (8)**Source:** https://docs.circom.io/circom-language/constraint-generation/
+This error arises because the constraint d <== a * b * c is not quadratic(8). **(8)Source:** https://docs.circom.io/circom-language/constraint-generation/
  
 ## 2.3.2  How is the process of compiling with PLONK different from compiling with Groth16? 
  
@@ -97,7 +105,7 @@ According to the comments in ../../node_modules/circomlib/circuits/comparators.c
 
 2^32 =   4,294,967,296, for a signed number the range is between -2,147,483,648 to +2,147,483,647
 
-According to IBM(9), the Most Significant Bit (MSB) is the sign bit. (9)**Source:** https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
+According to IBM(9), the Most Significant Bit (MSB) is the sign bit. **(9)Source:** https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
 
 
 ## 3.1.2 What are the possible outputs for the LessThan template and what do they mean respectively?
