@@ -1,3 +1,5 @@
+**Attribution:** The accompanying solutions were authored by **Marcos A. B.** His GitHub username is [codesport](https://github.com/codesport/).
+
 #  Part 1 Theoretical background of zk-SNARKs and zk-STARKS
 
 1. Groth16 and Plonk are 2 types of SNARk proofs.  A trusted setup ceremony is needed for SNARKs due to the private nature of the witness and the protection of the keys needed to be generated.
