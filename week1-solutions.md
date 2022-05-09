@@ -14,9 +14,9 @@
 
 2. According to Consenys(2), the keys are:
 
->... used to create the proofs required for private transactions and the verification of those proofs
+   >... used to create the proofs required for private transactions and the verification of those proofs
 
-**(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
+   **(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
 
 
 3. Two types of ZKs are SNARKs and STARKs. STARKS do not use a trusted set up because they rely on hashes.  For this reason they are also quantum resistant. Additional differences  between these two types of ZKs (as highlighted in the Consenys article above) include:
@@ -34,7 +34,7 @@
 It multiplies 2 private inputs (a  and b) to produce an output called c. The constraints describe how to produce the output where c <== a * b; is a “compound” statement that is an assignment `(c <-- a * b)`  and an equality constraint `(c === a * b)`.
 
 According to the iden docs(3), 
-> we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.
+>... we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.
 
 **(3)Source:** https://blog.iden3.io/first-zk-proof.html
 
