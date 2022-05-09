@@ -25,9 +25,9 @@
 
 ## 2.2.1. What does the circuit in HelloWorld.circom do?
 
-    It multiplies 2 private inputs (a  and b) to produce an output called c. The constraints describe how to produce the output where c <== a * b; is a “compound” statement that is an assignment `(c <-- a * b)`  and an equality constraint `(c === a * b)`.
+It multiplies 2 private inputs (a  and b) to produce an output called c. The constraints describe how to produce the output where c <== a * b; is a “compound” statement that is an assignment `(c <-- a * b)`  and an equality constraint `(c === a * b)`.
 
-    According to the iden docs(3), “we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.”
+According to the iden docs(3), “we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.”
     **(3)Source:** https://blog.iden3.io/first-zk-proof.html
 
 ## 2.2.2 What is a Powers of Tau ceremony? Explain why this is important in the setup of zk-SNARK applications.
@@ -86,7 +86,7 @@ However, unit test from of the same contract showed Groth16 to be faster for tru
 ## 2.5.3  Screenshot of all the tests (for HelloWorld, Multiplier3 with Groth16, and Multiplier3 with PLONK)
 
 **Figure 1: Screenshot of all the tests (for HelloWorld, Multiplier3 with Groth16, and Multiplier3 with PLONK)**
-![Question 2.5.3: Screenshot of all the tests](Q2/images/screenshot-2.5.3.png "Screenshot of all the tests")
+![Question 2.5.3: Screenshot of all the tests](images/screenshot-2.5.3.png "Screenshot of all the tests")
 
 
 # Part 3 Reading and designing circuits with circom
@@ -117,7 +117,7 @@ I determined this answer by compiling the LessThan() function in  `../../node_mo
 
 
 **Figure 2: Screenshot of Sudoko Test Using RangeProof**
-![Question 3.2.2 Sudoko Test Using RangeProof](Q2/images/screenshot-3.2.2.png "Screenshot of Sudoko Test Using RangeProof")
+![Question 3.2.2 Sudoko Test Using RangeProof](images/screenshot-3.2.2.png "Screenshot of Sudoko Test Using RangeProof")
 
 ## 3.2.4 What is/are the benefit(s) of this algorithmic implementation (sun and sum of squares) over the brute force implementation?
 
