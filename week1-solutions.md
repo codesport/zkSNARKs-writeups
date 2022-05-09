@@ -15,6 +15,7 @@
 2. According to Consenys(2), the keys are:
 
 >... used to create the proofs required for private transactions and the verification of those proofs
+
 **(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
 
 
@@ -34,6 +35,7 @@ It multiplies 2 private inputs (a  and b) to produce an output called c. The con
 
 According to the iden docs(3), 
 > we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.
+
 **(3)Source:** https://blog.iden3.io/first-zk-proof.html
 
 ## 2.2.2 What is a Powers of Tau ceremony? Explain why this is important in the setup of zk-SNARK applications.
@@ -63,13 +65,15 @@ Additional info on NP Relation from Britanica(6):
 **(6)Source:** https://www.britannica.com/science/NP-complete-problem
 
 According to a lecture by Luca Travison at Stanford(7), 
-> a search problem defined by a relation R is a NP search problem if the relation is efficiently computable and such that solutions, if they exist, are short."   
+> a search problem defined by a relation R is a NP search problem if the relation is efficiently computable and such that solutions, if they exist, are short.
+
 **(7)Source:** https://cs.stanford.edu/people/trevisan/cs254-12/lecture02.pdf
  
 
 ## 2.3.1 Try to run compile-Multiplier3-Groth16.sh. You should encounter an error with the circuit as is. Explain what the error means and how it arises.
  
-This error arises because the constraint d <== a * b * c is not quadratic(8). **(8)Source:** https://docs.circom.io/circom-language/constraint-generation/
+This error arises because the constraint d <== a * b * c is not quadratic(8). 
+**(8)Source:** https://docs.circom.io/circom-language/constraint-generation
  
 ## 2.3.2  How is the process of compiling with PLONK different from compiling with Groth16? 
  
@@ -105,7 +109,8 @@ According to the comments in ../../node_modules/circomlib/circuits/comparators.c
 
 2^32 =   4,294,967,296, for a signed number the range is between -2,147,483,648 to +2,147,483,647
 
-According to IBM(9), the Most Significant Bit (MSB) is the sign bit. **(9)Source:** https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
+According to IBM(9), the Most Significant Bit (MSB) is the sign bit. 
+**(9)Source:** https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
 
 
 ## 3.1.2 What are the possible outputs for the LessThan template and what do they mean respectively?
