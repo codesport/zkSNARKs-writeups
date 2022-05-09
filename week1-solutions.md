@@ -2,7 +2,7 @@
 
 #  Part 1 Theoretical background of zk-SNARKs and zk-STARKS
 
-1. Groth16 and Plonk are 2 types of SNARk proofs.  A trusted setup ceremony is needed for SNARKs due to the private nature of the witness and the protection of the keys needed to be generated.
+1. and 2. Groth16 and Plonk are 2 types of SNARk proofs.  A trusted setup ceremony is needed for SNARKs due to the private nature of the witness and the protection of the keys needed to be generated.
 
    Unlike Groth16, the trusted setup for PLONK is not circuit specific. This means a generic and universal trusted  setup is sufficient for PLONK.
 
@@ -12,7 +12,7 @@
 
     **(1)Source:** https://github.com/iden3/snarkjs#15-setup
 
-2. According to Consenys(2), the keys are:
+ According to Consenys(2), the keys are:
 
    >... used to create the proofs required for private transactions and the verification of those proofs
 
@@ -88,13 +88,13 @@ Additionally we exclude "making a contribution". Specifically, the following (Ph
  
 `snarkjs zkey contribute Multiplier3/circuit_0000.zkey Multiplier3/circuit_final.zkey --name="1st Contributor Name" -v -e="random text"`
  
-##  Part 2 Q4, 2 (2.4.1) What are the practical differences between Groth16 and PLONK?
+##  2.4.1 What are the practical differences between Groth16 and PLONK?
 
-For the same Multiplier3.circom file, the resulting solidity contract for PLONK was 24kb vs 12 kb for Groth16.  A smaller solidity contract should result in lower gas fees.
+For the same Multiplier3.circom file, the resulting solidity contract for PLONK was 24kb vs 12 kb for Groth16.  Keeping all other variables constant, a smaller solidity contract should result in lower gas fees.
 
-Additionally, in terms of compile time, a manual stopwatch observation showed PLONK to be 1.9 seconds faster than Groth16 (3.7 seconds for PLONK vs 5.6 for Groth16). 
+Additionally, in terms of **compile time**, a manual stopwatch observation showed PLONK to be 1.9 seconds faster than Groth16 (3.7 seconds for PLONK vs 5.6 for Groth16). 
 
-However, unit test from of the same contract showed Groth16 to be faster for truthy testing by 329 ms (1164 ms for Groth16 vs 1493 ms for PLONK)
+However, unit test from of the same contract showed Groth16 to be faster for truthy testing (verifying the proof) by 329 ms (1164 ms for Groth16 vs 1493 ms for PLONK)
 
 ## 2.5.3  Screenshot of all the tests (for HelloWorld, Multiplier3 with Groth16, and Multiplier3 with PLONK)
 
@@ -108,7 +108,7 @@ However, unit test from of the same contract showed Groth16 to be faster for tru
 
 According to the comments in ../../node_modules/circomlib/circuits/comparators.circom "n is the number of bits the input [has].”
 
-2^32 =   4,294,967,296, for a signed number the range is between -2,147,483,648 to +2,147,483,647
+2^32 = 4,294,967,296, for a signed number the range is between -2,147,483,648 to +2,147,483,647
 
 According to IBM(9), the Most Significant Bit (MSB) is the sign bit. 
 **(9)Source:** https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
@@ -125,7 +125,7 @@ I determined this answer by compiling the LessThan() function in  `../../node_mo
 
 * The error encountered was: `circuit too big for this power of tau ceremony. 70534 > 2**16`. 
 * The downloaded power of tau file is called `powersOfTau28_hez_final_16.ptau`
-* According to Polygon Hermez(10), “There is a smaller file for each power, which is a subset of the larger one.” (10)**Source:** https://blog.hermez.io/hermez-cryptographic-setup/
+* According to Polygon Hermez(10), *There is a smaller file for each power, which is a subset of the larger one.* **(10)Source:** https://blog.hermez.io/hermez-cryptographic-setup/
 * Hence, the “16” in the file name refers to the constraints in base 2 which is 2^16 = 65,536
 * Again, the error states the the circuit size is 70,534 so one must download the next largest file with with 2^17 constraints: `powersOfTau28_hez_final_17.ptau`
 
