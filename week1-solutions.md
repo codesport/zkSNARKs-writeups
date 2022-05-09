@@ -9,12 +9,13 @@
    According to the Iden3 documentation(1), 
    
    >Groth16 requires a trusted ceremony for each circuit. PLONK does not require it, it's enough with the powers of tau ceremony which is universal.
+
     **(1)Source:** https://github.com/iden3/snarkjs#15-setup
 
 2. According to Consenys(2), the keys are:
 
 >... used to create the proofs required for private transactions and the verification of those proofs
-    **(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
+**(2)Source:** https://consensys.net/blog/blockchain-explained/zero-knowledge-proofs-starks-vs-snarks
 
 
 3. Two types of ZKs are SNARKs and STARKs. STARKS do not use a trusted set up because they rely on hashes.  For this reason they are also quantum resistant. Additional differences  between these two types of ZKs (as highlighted in the Consenys article above) include:
@@ -33,7 +34,7 @@ It multiplies 2 private inputs (a  and b) to produce an output called c. The con
 
 According to the iden docs(3), 
 > we’re using <== to connect c to a and b and at the same time constrain c to be the value of a*b.
-    **(3)Source:** https://blog.iden3.io/first-zk-proof.html
+**(3)Source:** https://blog.iden3.io/first-zk-proof.html
 
 ## 2.2.2 What is a Powers of Tau ceremony? Explain why this is important in the setup of zk-SNARK applications.
 
@@ -43,8 +44,7 @@ The goal of the Powers of Tau ceremony is to securely generate a Common Referenc
 According to ebfull(4) the Powers of Tau ceremony is a: 
 
 >multi-party computation (MPC) ceremony which constructs partial zk-SNARK parameters for all circuits... It works by taking a step that is performed by all zk-SNARK MPCs and performing it in just one single ceremony. This makes individual zk-SNARK MPCs much cheaper and allows them to scale to practically unbounded numbers of participants
-
-   **(4)Source:**  https://github.com/ebfull/powersoftau
+**(4)Source:**  https://github.com/ebfull/powersoftau
 
 ## 2.2.3 How are Phase 1 and Phase 2 trusted setup ceremonies different from each other?
 
