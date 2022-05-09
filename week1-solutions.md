@@ -45,7 +45,8 @@ The goal of the Powers of Tau ceremony is to securely generate a Common Referenc
 
 According to ebfull(4) the Powers of Tau ceremony is a: 
 
->multi-party computation (MPC) ceremony which constructs partial zk-SNARK parameters for all circuits... It works by taking a step that is performed by all zk-SNARK MPCs and performing it in just one single ceremony. This makes individual zk-SNARK MPCs much cheaper and allows them to scale to practically unbounded numbers of participants
+>multi-party computation (MPC) ceremony which constructs partial zk-SNARK parameters for all circuits... It works by taking a step that is performed by all zk-SNARK MPCs and performing it in just one single ceremony. This makes individual zk-SNARK MPCs much cheaper and allows them to scale to practically unbounded numbers of participants.
+
 **(4)Source:**  https://github.com/ebfull/powersoftau
 
 ## 2.2.3 How are Phase 1 and Phase 2 trusted setup ceremonies different from each other?
@@ -143,7 +144,7 @@ For a blockchain app (i.e., running on-chain) these issues are major roadblocks.
 
 ## 3.4 Apart from the standard circomlib library and circomlib-matrix library that performs matrix operations, what other libraries do you think could be created to help foster the growth of ZK applications?
 
-Libraries for specific zkSNARKs use cases would be useful.  Some suggestions are:
+Libraries for specific and common zkSNARK use cases would be useful.  Some suggestions are:
 
 * Age Verification
 * Income Verification
